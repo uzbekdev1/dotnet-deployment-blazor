@@ -1,0 +1,42 @@
+﻿@page "/error-codes"
+@using BlazorApp1.Models
+@using BlazorApp1.Data
+@inject ErrorService service
+
+<h1>Error Codes</h1>
+
+@if (errors == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Title</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in errors)
+            {
+                <tr>
+                    <td>@item.Status</td>
+                    <td>@item.Title</td>
+                    <td>@item.Detail</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private ErrorCodeModel[] errors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        errors = await service.GetListAsync();
+    }
+}

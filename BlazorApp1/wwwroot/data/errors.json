@@ -1,0 +1,19 @@
+﻿{
+  "errors": [
+    {
+      "status": 403,
+      "title": "The backend responded with an error",
+      "detail": "Editing secret powers is not authorized on Sundays."
+    },
+    {
+      "status": 422,
+      "title": "The backend responded with an error",
+      "detail": "Volume does not, in fact, go to 11."
+    },
+    {
+      "status": 500,
+      "title": "The backend responded with an error",
+      "detail": "Reputation service not responding after three requests."
+    }
+  ]
+}
